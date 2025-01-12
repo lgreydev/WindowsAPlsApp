@@ -13,5 +13,11 @@ struct WindowsAPlsAppApp: App {
         WindowGroup {
             ContentView()
         }
+        
+        WindowGroup(id: "FloatingWindow") {
+            FloatingWindow()
+        }
+        .windowLevel(.floating)
+        .windowResizability(.contentSize)
     }
 }

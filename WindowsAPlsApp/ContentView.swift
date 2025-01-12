@@ -8,6 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.openWindow) private var openWindow
+    
+    var body: some View {
+        Button("Show Floating Window") {
+            openWindow(id: "FloatingWindow")
+        }
+    }
+}
+
+struct FloatingWindow: View {
     var body: some View {
         Image(.pic)
             .resizable()
