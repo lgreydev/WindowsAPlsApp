@@ -16,8 +16,12 @@ struct WindowsAPlsAppApp: App {
         
         WindowGroup(id: "FloatingWindow") {
             FloatingWindow()
+                .simultaneousGesture(WindowDragGesture())
+                .toolbarVisibility(.hidden, for: .windowToolbar)
+                .containerBackground(.clear, for: .window)
         }
         .windowLevel(.floating)
         .windowResizability(.contentSize)
+        .windowStyle(.plain)
     }
 }
