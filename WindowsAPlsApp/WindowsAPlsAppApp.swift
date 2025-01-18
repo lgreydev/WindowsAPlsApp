@@ -23,5 +23,16 @@ struct WindowsAPlsAppApp: App {
         .windowLevel(.floating)
         .windowResizability(.contentSize)
         .windowStyle(.plain)
+        
+        WindowGroup(id: "AlertWindow") {
+            AlertWindows()
+                .allowsHitTesting(false)
+                .toolbarVisibility(.hidden, for: .windowToolbar)
+                .containerBackground(.clear, for: .window)
+        }
+        .windowLevel(.floating)
+        .windowBackgroundDragBehavior(.disabled)
+        .windowResizability(.contentSize)
+        .windowStyle(.plain)
     }
 }
