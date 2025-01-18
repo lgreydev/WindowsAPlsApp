@@ -35,5 +35,10 @@ struct WindowsAPlsAppApp: App {
         .windowBackgroundDragBehavior(.disabled)
         .windowResizability(.contentSize)
         .windowStyle(.plain)
+        .restorationBehavior(.disabled)
+        .defaultWindowPlacement { content, context in
+            let viewSize = content.sizeThatFits(.init(context.defaultDisplay.visibleRect.size))
+            return .init(.init(x: 0.5, y: 1), size: viewSize)
+        }
     }
 }
